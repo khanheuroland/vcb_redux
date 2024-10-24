@@ -1,10 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from './counterSlice';
-import advancedCounterReducer from './advancedSlide';
+import personReducer from './personSlice'
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
-        advancedCounter: advancedCounterReducer
+        person: personReducer
     }
 });
