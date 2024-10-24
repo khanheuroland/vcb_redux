@@ -4,6 +4,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchPerson = createAsyncThunk("users", async (page) => {
   const response = await fetch(`https://reqres.in/api/users?page=${page}`);
   const res = await response.json();
+  console.log(res);
   return res;
 });
 
@@ -17,7 +18,7 @@ const personSlice = createSlice({
     error: null,
   },
   reducers: {
-    //define action method
+    
   },
   extraReducers: (builder) => {
     builder
