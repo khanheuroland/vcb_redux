@@ -1,11 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 //Create middleware with redux thunk
 export const fetchPerson = createAsyncThunk("users", async (page) => {
+  /*
   const response = await fetch(`https://reqres.in/api/users?page=${page}`);
   const res = await response.json();
   console.log(res);
   return res;
+  */
+
+  //Use Axios
+  const response = await axios.get(`https://reqres.in/api/users?page=${page}`);
+  const res = response.data;
+  return res;
+
 });
 
 const personSlice = createSlice({
